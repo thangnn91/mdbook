@@ -1,8 +1,9 @@
 # Summary
 
 - [mdBook Quickstart](README.md)
-- [Chapter 1](chapter-1.md)
+- [Defuture Contracts](defuture-contract.md)
+  - [Staking AIgentfi](contracts/staking-aigentfi.md)
 - [Chapter 2](chapter-2.md)
 - [Foo](foo/README.md)
-    - [Fizz](foo/fizz.md)
-    - [Buzz](foo/buzz.md)
+  - [Fizz](foo/fizz.md)
+  - [Buzz](foo/buzz.md)

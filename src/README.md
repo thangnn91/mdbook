@@ -1,7 +1,7 @@
 # mdBook Quickstart
 
-Welcome to the demo site for mkBook Quickstart.
+Welcome to the demo site for mdBook Quickstart.
 
 View source:
 
-[![MichaelCurrin - mdbook-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=mdbook-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/mdbook-quickstart)
+[![Duckio - mdbook-quickstart](https://img.shields.io/static/v1?label=duckio&message=mdbook&color=blue&logo=github)](https://github.com/thangnn91/mdbook)
