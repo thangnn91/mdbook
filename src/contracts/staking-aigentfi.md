@@ -1,4 +1,4 @@
-## 1. Contract address
+### 1. Contract address
 
 - [0x76eEd609B47d0a986dA28ab7f817D5abB4C3CA79](https://explorer.zksync.io/address/0x76eEd609B47d0a986dA28ab7f817D5abB4C3CA79)
   <details>
@@ -493,3 +493,52 @@
   ```
 
   </details>
+
+### 2. Documentation
+
+- Storage variables
+
+```js
+  uint256 public countTokens; //total available tokens
+  address[] public aigentFiTokens; //list of tokens
+  mapping(address => uint256) public accTokenPerStakedToken; //accumulate to cal reward
+  mapping(address => uint256) public totalRewardsDistributedToken; //total reward distributed of token
+  mapping(address => bool) public isActive; // token address => isActive
+
+  mapping(address => uint256) public indexOfAIgentFiToken; // token address => index
+
+  mapping(address => mapping(address => User)) public users; // token => user address => info
+  //user struct
+  struct User {
+    uint256 debtToken; // 1e18
+    uint256 harvestedRewardToken; // 1e18
+    uint256 pendingRewardToken; // 1e18
+  }
+```
+
+- Functions
+  For client-side integration, you can loop **_from 0 to countTokens_** and call get **_aigentFiTokens(i)_**. A more optimized approach is to use multicall.
+
+```js
+  function distributeRewardAgentFiToken(address _token, uint256 _amount)
+```
+
+The distributeRewardAgentFiToken can only be called from partnerStakingAigentFi to distribute rewards for the tokens.
+
+```js
+  function pendingRewardToken(address _token, address _sender)
+```
+
+Function pendingRewardToken is used to calculate the reward amount for a specific token of a user. In the future, we will develop a function to retrieve rewards for all tokens belonging to each user.
+
+```js
+ function harvest(address[] calldata _tokens)
+```
+
+The harvestRewardToken function takes specific tokens as input to be harvested. Currently, it cannot process "harvest all" due to a bug on the partner side, which prevents the transfer of tokens in bonding curves. Once the system is stable, the "harvest all" functionality will be enabled.
+
+```js
+ function users(address token, address staker) view returns (User memory)
+```
+
+Read infomation of a staker depend on token address
