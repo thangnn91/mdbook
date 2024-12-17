@@ -1,10 +1,11 @@
 # mdBook Quickstart 🦀 📙
+
 > Starter template for an online book or docs site made with Markdown and mdBook
 
 <!-- Badges generated with https://michaelcurrin.github.io/badge-generator/ -->
 
-[![GH Pages Deploy](https://github.com/MichaelCurrin/mdbook-quickstart/workflows/GH%20Pages%20Deploy/badge.svg)](https://github.com/MichaelCurrin/mdbook-quickstart/actions/workflows/main.yml?query=workflow:"GH+Pages+Deploy")
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/mdbook-quickstart?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/mdbook-quickstart/releases/)
+[![GH Pages Deploy](https://github.com/thangnn91/mdbook/workflows/GH%20Pages%20Deploy/badge.svg)](https://github.com/thangnn91/mdbook/actions/workflows/main.yml?query=workflow:"GH+Pages+Deploy")
+[![GitHub tag](https://img.shields.io/github/tag/thangnn91/mdbook?include_prereleases=&sort=semver)](https://github.com/thangnn91/mdbook/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Made with Rust](https://img.shields.io/badge/Rust-1-blue?logo=rust&logoColor=white)](https://www.rust-lang.org/)
@@ -12,7 +13,6 @@
 
 [![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
 [![Made with GH Actions](https://img.shields.io/badge/CI-GitHub_Actions-blue?logo=github-actions&logoColor=white)](https://github.com/features/actions)
-
 
 ## Preview
 
@@ -24,12 +24,11 @@
     
 <br>
     
-[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-blue?style=for-the-badge)](https://michaelcurrin.github.io/mdbook-quickstart/)
+[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-blue?style=for-the-badge)](https://thangnn91.github.io/mdbook/)
     
-[![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/MichaelCurrin/mdbook-quickstart/generate)
+[![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/thangnn91/mdbook/generate)
 
 </div>
-
 
 ## Sample usage
 
@@ -41,7 +40,6 @@ $ make serve
 
 Open in the browser.
 
-
 ## Documentation
 
 <div align="center">
@@ -49,8 +47,3 @@ Open in the browser.
 [![View - Documentation](https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)](/docs/)
 
 </div>
-
-
-## License
-
-Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
