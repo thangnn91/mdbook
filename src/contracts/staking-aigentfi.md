@@ -517,6 +517,7 @@
 ```
 
 - Functions
+
   For client-side integration, you can loop **_from 0 to countTokens_** and call get **_aigentFiTokens(i)_**. A more optimized approach is to use multicall.
 
 ```js
@@ -542,3 +543,13 @@ The harvestRewardToken function takes specific tokens as input to be harvested. 
 ```
 
 Read infomation of a staker depend on token address
+
+- Events
+
+```js
+  event AdminUpdated(address value);
+  event AgentFiUpdated(address value);
+  event TokenDistributed(address token, uint256 amount);
+  event TokenHarvested(address indexed token, address indexed user, uint256 amount);
+  event NotifyBalanceChange(address indexed staker, uint256 userStaked, uint256 changeAmount, bool inceaseOrDecrease);
+```
