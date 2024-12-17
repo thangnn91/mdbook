@@ -152,7 +152,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="1-contract-address"><a class="header" href="#1-contract-address">1. Contract address</a></h2>
+                        <h3 id="1-contract-address"><a class="header" href="#1-contract-address">1. Contract address</a></h3>
 <ul>
 <li>
 <p><a href="https://explorer.zksync.io/address/0x76eEd609B47d0a986dA28ab7f817D5abB4C3CA79">0x76eEd609B47d0a986dA28ab7f817D5abB4C3CA79</a></p>
@@ -647,6 +647,42 @@
 </details>
 </li>
 </ul>
+<h3 id="2-documentation"><a class="header" href="#2-documentation">2. Documentation</a></h3>
+<ul>
+<li>Storage variables</li>
+</ul>
+<pre><code class="language-js">  uint256 public countTokens; //total available tokens
+  address[] public aigentFiTokens; //list of tokens
+  mapping(address =&gt; uint256) public accTokenPerStakedToken; //accumulate to cal reward
+  mapping(address =&gt; uint256) public totalRewardsDistributedToken; //total reward distributed of token
+  mapping(address =&gt; bool) public isActive; // token address =&gt; isActive
+
+  mapping(address =&gt; uint256) public indexOfAIgentFiToken; // token address =&gt; index
+
+  mapping(address =&gt; mapping(address =&gt; User)) public users; // token =&gt; user address =&gt; info
+  //user struct
+  struct User {
+    uint256 debtToken; // 1e18
+    uint256 harvestedRewardToken; // 1e18
+    uint256 pendingRewardToken; // 1e18
+  }
+</code></pre>
+<ul>
+<li>Functions
+For client-side integration, you can loop <strong><em>from 0 to countTokens</em></strong> and call get <strong><em>aigentFiTokens(i)</em></strong>. A more optimized approach is to use multicall.</li>
+</ul>
+<pre><code class="language-js">  function distributeRewardAgentFiToken(address _token, uint256 _amount)
+</code></pre>
+<p>The distributeRewardAgentFiToken can only be called from partnerStakingAigentFi to distribute rewards for the tokens.</p>
+<pre><code class="language-js">  function pendingRewardToken(address _token, address _sender)
+</code></pre>
+<p>Function pendingRewardToken is used to calculate the reward amount for a specific token of a user. In the future, we will develop a function to retrieve rewards for all tokens belonging to each user.</p>
+<pre><code class="language-js"> function harvest(address[] calldata _tokens)
+</code></pre>
+<p>The harvestRewardToken function takes specific tokens as input to be harvested. Currently, it cannot process "harvest all" due to a bug on the partner side, which prevents the transfer of tokens in bonding curves. Once the system is stable, the "harvest all" functionality will be enabled.</p>
+<pre><code class="language-js"> function users(address token, address staker) view returns (User memory)
+</code></pre>
+<p>Read infomation of a staker depend on token address</p>
 
                     </main>
 
