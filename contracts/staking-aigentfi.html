@@ -668,8 +668,10 @@
   }
 </code></pre>
 <ul>
-<li>Functions
-For client-side integration, you can loop <strong><em>from 0 to countTokens</em></strong> and call get <strong><em>aigentFiTokens(i)</em></strong>. A more optimized approach is to use multicall.</li>
+<li>
+<p>Functions</p>
+<p>For client-side integration, you can loop <strong><em>from 0 to countTokens</em></strong> and call get <strong><em>aigentFiTokens(i)</em></strong>. A more optimized approach is to use multicall.</p>
+</li>
 </ul>
 <pre><code class="language-js">  function distributeRewardAgentFiToken(address _token, uint256 _amount)
 </code></pre>
@@ -683,6 +685,15 @@ For client-side integration, you can loop <strong><em>from 0 to countTokens</em>
 <pre><code class="language-js"> function users(address token, address staker) view returns (User memory)
 </code></pre>
 <p>Read infomation of a staker depend on token address</p>
+<ul>
+<li>Events</li>
+</ul>
+<pre><code class="language-js">  event AdminUpdated(address value);
+  event AgentFiUpdated(address value);
+  event TokenDistributed(address token, uint256 amount);
+  event TokenHarvested(address indexed token, address indexed user, uint256 amount);
+  event NotifyBalanceChange(address indexed staker, uint256 userStaked, uint256 changeAmount, bool inceaseOrDecrease);
+</code></pre>
 
                     </main>
 
